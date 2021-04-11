@@ -1,0 +1,23 @@
+<div class="container">
+    <h1 style="color:blue">Name: {{name}} - interpolation</h1>
+    <h1>Title: {{showTitle()}}</h1>
+    <p>{{name}} {{showTitle()}}</p>
+    
+    <!-- không dùng cách này vì rối  -->
+    <p [innerHTML]="name + ' ' + showTitle()"> Property binding </p>
+    <br/>
+    <input value="{{name}}" />
+    <img src={{imgSrc}} /> 
+    <br/>
+    <!-- cách thường dùng  -->
+    <input [value]="name" />
+    <img [src]="imgSrc" />
+    <br/>
+    
+    
+    <!-- biến giao diện  -->
+    <input #tInput/>
+    <button class="btn btn-success"
+    (click)="changeName(tInput.value)"
+    >Set title - Event binding </button> 
+</div>
